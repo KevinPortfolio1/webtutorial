@@ -1,0 +1,208 @@
+CSS 布局框架
+
+1. Bootstrap
+----------------------------------------------------------------------------------------------------------------------
+基本栅格布局
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">内容1</div>
+    <div class="col-md-4">内容2</div>
+    <div class="col-md-4">内容3</div>
+  </div>
+</div>
+
+控制不同屏幕尺寸下的列宽
+
+<div class="row">
+  <div class="col-12 col-md-6 col-lg-4">内容</div>
+  <div class="col-12 col-md-6 col-lg-4">内容</div>
+  <div class="col-12 col-md-6 col-lg-4">内容</div>
+</div>
+
+固定宽度布局
+<div class="container">
+  <div class="row">
+    <div class="col-12">固定宽度内容</div>
+  </div>
+</div>
+
+流式布局  根据屏幕大小自动调整
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">流式内容</div>
+  </div>
+</div>
+
+方便的导航条组件
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">品牌</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">首页 <span class="sr-only">(当前)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">特性</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">定价</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+适用于显示图片、标题、文本等内容
+<div class="card" style="width: 18rem;">
+  <img src="image.jpg" class="card-img-top" alt="卡片图片">
+  <div class="card-body">
+    <h5 class="card-title">卡片标题</h5>
+    <p class="card-text">一些简短的描述文字。</p>
+    <a href="#" class="btn btn-primary">查看详情</a>
+  </div>
+</div>
+
+<form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">邮箱地址</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="请输入邮箱">
+  </div>
+  <button type="submit" class="btn btn-primary">提交</button>
+</form>
+
+可以使用卡片组件创建复杂的网格布局
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card">
+        <img src="image1.jpg" class="card-img-top" alt="Card 1">
+        <div class="card-body">
+          <h5 class="card-title">卡片 1</h5>
+          <p class="card-text">卡片 1 的内容</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <img src="image2.jpg" class="card-img-top" alt="Card 2">
+        <div class="card-body">
+          <h5 class="card-title">卡片 2</h5>
+          <p class="card-text">卡片 2 的内容</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <img src="image3.jpg" class="card-img-top" alt="Card 3">
+        <div class="card-body">
+          <h5 class="card-title">卡片 3</h5>
+          <p class="card-text">卡片 3 的内容</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+2. Foundation
+   由 Zurb 開發，主要用來幫助開發者設計響應式網站和網頁應用程式
+3. Gridlex
+    一個輕量級的 CSS 網格系統，旨在幫助開發者創建響應式網頁佈局   不需要額外的 JavaScript
+4. Tailwind CSS
+   Tailwind CSS 不是一個預設樣式的 UI 組件庫，而是一個工具類的 CSS 框架，
+   它提供了大量的實用工具類，讓開發者能夠更靈活地組合出自定義的 UI 佈局
+5. CSS Grid Layout
+   基於 2D 網格系統，允許您在水平方向和垂直方向上控制元素的排版，而不像傳統的單維 Flexbox 那樣主要用於單一方向的佈局。
+   要使某個元素成為 grid 容器，您只需要將該元素的 CSS 屬性設置為 display: grid;
+6. Bulma
+   現代化的、基於 CSS Flexbox 的輕量級前端框架。它旨在讓開發者能夠快速構建響應式網頁佈局和介面，
+   而不需要寫太多的 CSS。Bulma 的設計風格簡單、清新，並且提供了豐富的樣式類別，
+   讓開發者可以更方便地進行布局、樣式和元件的設計。
+   
+7.新手布局方向
+
+	1. 單列布局
+	  .container {
+	  max-width: 960px;
+	  margin: 0 auto;
+	  padding: 20px;
+	}
+	header, footer {
+	  background-color: #f8f8f8;
+	  padding: 10px;
+	  text-align: center;
+	}
+	main {
+	  padding: 20px;
+	  background-color: #fff;
+	}
+	
+	2.兩列布局
+		.container {
+	  display: flex;
+	  flex-direction: column;
+	  max-width: 960px;
+	  margin: 0 auto;
+	}
+	header, footer {
+	  background-color: #f8f8f8;
+	  padding: 10px;
+	  text-align: center;
+	}
+	.main-content {
+	  display: flex;
+	}
+	main {
+	  flex: 3; /* 主內容區域占 3/4 */
+	  padding: 20px;
+	}
+	.sidebar {
+	  flex: 1; /* 側邊欄占 1/4 */
+	  padding: 20px;
+	  background-color: #f4f4f4;
+	}
+	3. 三列布局
+		.container {
+	  display: flex;
+	  flex-direction: column;
+	  max-width: 960px;
+	  margin: 0 auto;
+	}
+	header, footer {
+	  background-color: #f8f8f8;
+	  padding: 10px;
+	  text-align: center;
+	}
+	.main-content {
+	  display: flex;
+	}
+	aside {
+	  flex: 1;
+	  padding: 20px;
+	  background-color: #f4f4f4;
+	}
+	main {
+	  flex: 2; /* 主內容區域占 2/4 */
+	  padding: 20px;
+	}
+	
+	4.實作
+	  Flexbox 和 Grid
+	  使用 CSS Resets 或 Normalize
+	  媒體查詢（Media Queries）
+	  
+	  
+8.傳統布置
+	依賴於較舊的 CSS 佈局方法，如 浮動（Float）、定位（Positioning） 和 表格（Table） 等。
+
+	在 float 方法中，網頁元素會被浮動至容器的左側或右側。
+	這種方法通常用於實現多欄式布局，但也會遇到一些問題，如浮動元素脫離文檔流，可能會造成布局錯亂。
+	為了修正這些問題，通常需要進行 "clearfix" 清除浮動。
+	
+
+
+
+
+
