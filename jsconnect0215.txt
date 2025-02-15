@@ -1,0 +1,47 @@
+以下是一些常見的JavaScript通訊技術：
+
+1. HTTP請求（AJAX）：
+
+AJAX（Asynchronous JavaScript and XML）允許在不重新加載整個頁面的情況下，與伺服器進行異步數據交換。
+這使得網頁能夠在後台與伺服器進行通信，並根據需要更新頁面內容。現代的fetch API提供了更簡潔的語法來進行HTTP請求。
+
+2. WebSocket：
+
+WebSocket是一種在單個TCP連接上進行全雙工通信的協議，適用於需要實時數據交換的應用，如即時聊天或即時遊戲。
+JavaScript的WebSocket API允許在客戶端和伺服器之間建立持久的連接，實現雙向通信。
+
+3. Server-Sent Events（SSE）：
+
+SSE允許伺服器向客戶端推送事件，適用於需要伺服器主動向客戶端發送更新的情況，如即時通知。
+JavaScript的EventSource API使得客戶端能夠接收來自伺服器的事件流。
+
+4. WebRTC：
+
+WebRTC（Web Real-Time Communication）是一組API，允許在瀏覽器之間進行即時的音頻、視頻和數據共享。
+這使得開發者可以構建無需插件的即時通訊應用。
+
+5. Web Workers：
+
+Web Workers允許在背景線程中運行JavaScript代碼，從而避免阻塞主線程。這對於需要進行大量計算的任務非常有用。
+主線程和Worker之間可以通過消息傳遞進行通信。
+
+6. Local Storage和Session Storage：
+
+這些Web存儲API允許在客戶端存儲數據，並在不同的頁面之間共享。
+localStorage用於持久化存儲，而sessionStorage用於會話期間的存儲。
+
+7. IndexedDB：
+
+IndexedDB是一種在客戶端存儲大量結構化數據的方式，支持複雜的查詢和事務。
+它適用於需要在客戶端存儲大量數據的應用，如離線應用。
+
+8. Cookies：
+
+Cookies允許在客戶端存儲少量數據，並在每次請求時發送到伺服器。
+它們通常用於存儲用戶的會話信息或偏好設置。
+
+9. JavaScript與原生應用的通信（JS Bridge）：
+
+在混合應用中，JavaScript與原生代碼之間的通信通常通過JS Bridge實現。
+這允許Web應用訪問原生功能，如相機或地理位置。
+例如，DSBridge是一個現代的跨平台JavaScript橋接庫，允許JavaScript與原生代碼之間進行同步或異步的函數調用。
