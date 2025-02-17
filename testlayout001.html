@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zig-Zag Layout Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 100%;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+        .zigzag-section {
+            display: flex;
+            flex-direction: row;
+            margin: 50px 0;
+            justify-content: space-between;
+        }
+        .section-left, .section-right {
+            width: 48%;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .section-left img, .section-right img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .section-left {
+            order: 1;
+        }
+        .section-right {
+            order: 2;
+        }
+        .section-right img {
+            order: 1;
+        }
+        .section-left img {
+            order: 2;
+        }
+        h2 {
+            color: #333;
+        }
+        p {
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- First Zig-Zag Section -->
+        <div class="zigzag-section">
+            <div class="section-left">
+                <h2>Section 1 Title</h2>
+                <p>This is some text content for the left side. This content is placed to the left, with the image appearing below.</p>
+            </div>
+            <div class="section-right">
+                <img src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAA... (your base64 string here)" alt="Cat image">
+                <h2>Section 1 Title</h2>
+                <p>This is some text content for the right side. The image is placed at the top, with the text below it.</p>
+            </div>
+        </div>
+
+        <!-- Second Zig-Zag Section -->
+        <div class="zigzag-section">
+            <div class="section-left">
+                <img src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAA... (your base64 string here)" alt="Cat image">
+                <h2>Section 2 Title</h2>
+                <p>This is some text content for the left side again. It follows the zig-zag pattern.</p>
+            </div>
+            <div class="section-right">
+                <h2>Section 2 Title</h2>
+                <p>This is some text content for the right side again. It follows the zig-zag pattern as well.</p>
+               <img src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAA... (your base64 string here)" alt="Cat image">
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
