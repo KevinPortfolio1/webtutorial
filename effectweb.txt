@@ -1,0 +1,490 @@
+網頁特效範例與簡單說明：
+
+1. 滑動動畫（Slide Animation）
+
+    說明：滑動動畫通常用於元素從屏幕的一邊滑入或滑出，通常用於側邊導航、消息提示等。
+    範例：點擊一個按鈕，側邊欄從右側滑入，或是下拉菜單從頂部滑下來。
+
+.slide-in {
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in-out;
+}
+.slide-in.open {
+    transform: translateX(0);
+}
+
+2. 滾動觸發動畫（Scroll Triggered Animation）
+
+    說明：當用戶滾動頁面時，元素會根據滾動位置觸發動畫。這種特效常用於延遲顯示或當用戶瀏覽頁面時增強視覺吸引力。
+    範例：圖片或文字隨著滾動而逐漸淡入，或者元素會隨著滾動進行平移或旋轉。
+
+.fade-in {
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+}
+.fade-in.visible {
+    opacity: 1;
+}
+
+3. 懸停效果（Hover Effects）
+
+    說明：當用戶將鼠標懸停在某個元素上時，該元素會發生一些變化，例如顏色變化、放大、陰影效果等。
+    範例：當用戶將鼠標懸停在按鈕上時，按鈕的顏色或大小會改變，或顯示陰影效果。
+
+button:hover {
+    background-color: #4CAF50;
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+4. 視差滾動效果（Parallax Scrolling）
+
+    說明：視差滾動效果是指背景和前景以不同的速度移動，創造出一種深度感。這種效果常用於網站的頭部或大型背景圖片。
+    範例：背景圖片滾動時會有緩慢的動作，而前景元素則以較快的速度滾動。
+
+.parallax {
+    background-image: url('background.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+5. 過渡效果（Transition Effects）
+
+    說明：過渡效果允許元素的某些屬性在變化時變得平滑，這通常用於顏色、尺寸、透明度等屬性。
+    範例：當用戶將鼠標懸停在圖像上時，圖像會平滑地變大。
+
+img {
+    transition: transform 0.3s ease-in-out;
+}
+img:hover {
+    transform: scale(1.2);
+}
+
+6. 彈跳動畫（Bounce Animation）
+
+    說明：彈跳動畫使元素顯得像是從屏幕中彈跳出來的，通常用於吸引用戶注意力。
+    範例：當頁面加載時，文字或圖片以彈跳效果顯示。
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+.bounce {
+    animation: bounce 1s infinite;
+}
+
+7. 模糊效果（Blur Effect）
+
+    說明：模糊效果常用於背景或彈出層，使其更加突出。這種效果可以增強背景的深度感。
+    範例：當用戶點擊某個按鈕時，背景會變模糊。
+
+.blurred {
+    filter: blur(5px);
+    transition: filter 0.3s ease;
+}
+
+8. 動畫字體（Text Animation）
+
+    說明：文字的動畫效果通常包括文字顏色變換、字母逐漸顯示或滑入等。這有助於強調內容。
+    範例：字母逐個顯示，或文字從左側滑動進來。
+
+.text-slide-in {
+    opacity: 0;
+    transform: translateX(-100%);
+    animation: slide-in 1s forwards;
+}
+@keyframes slide-in {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+9. 光暈效果（Glow Effect）
+
+    說明：光暈效果通常會讓元素在獲得焦點或懸停時發出光暈，增加吸引力。
+    範例：用戶將鼠標懸停在按鈕上時，按鈕會發出亮眼的光暈。
+
+button:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 255, 0.8);
+}
+
+---------------------------------------------------------------------------------------------------
+網頁圖片廣告效果與範例，這些效果能夠提升廣告的吸引力與點擊率：
+1. 懸停縮放效果（Hover Zoom）
+
+    說明：當用戶將鼠標懸停在圖片上時，圖片會平滑地放大，讓用戶聚焦於細節，並使廣告看起來更具動感。
+    範例：用戶將鼠標懸停在廣告圖片上時，圖片會放大並顯示更多細節，吸引點擊。
+
+.ad-image {
+    transition: transform 0.3s ease-in-out;
+}
+.ad-image:hover {
+    transform: scale(1.1);
+}
+
+2. 滾動顯示（Scroll Reveal）
+
+    說明：圖片會在頁面滾動到一定位置時顯示，這樣的效果能吸引用戶注意，特別適合長頁面中的廣告展示。
+    範例：當用戶向下滾動頁面時，圖片從底部滑入並呈現。
+
+.ad-image {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: opacity 1s, transform 1s;
+}
+.ad-image.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+// 使用 JavaScript 來監控滾動
+window.addEventListener('scroll', function () {
+    const images = document.querySelectorAll('.ad-image');
+    images.forEach(img => {
+        if (img.getBoundingClientRect().top < window.innerHeight) {
+            img.classList.add('visible');
+        }
+    });
+});
+
+3. 漸變淡入效果（Fade In）
+
+    說明：圖片從完全透明到完全顯示的過渡效果，這使得廣告顯得更為柔和，並逐步吸引用戶的視線。
+    範例：圖片在頁面加載後逐漸顯現。
+
+.ad-image {
+    opacity: 0;
+    transition: opacity 1s ease-in;
+}
+.ad-image.loaded {
+    opacity: 1;
+}
+
+// 加載圖片後觸發淡入效果
+window.onload = function () {
+    document.querySelector('.ad-image').classList.add('loaded');
+};
+
+4. 閃爍光暈效果（Glowing Border）
+
+    說明：圖片的邊緣會有閃爍或發光效果，這會讓廣告更加醒目，通常用來突出顯示促銷或特別優惠。
+    範例：當用戶將鼠標懸停在圖片上時，圖片邊緣會發出光暈。
+
+.ad-image {
+    border: 2px solid transparent;
+    transition: border 0.3s ease;
+}
+.ad-image:hover {
+    border: 2px solid #FF6347;
+    box-shadow: 0 0 15px rgba(255, 99, 71, 0.8);
+}
+
+5. 文字滾動效果（Text Overlay Animation）
+
+    說明：圖片上顯示滾動的文字，這樣的效果常見於宣傳標語或促銷訊息，吸引用戶注意圖片背後的內容。
+    範例：文字會隨著圖片一起滾動或出現，並強調特定的訊息。
+
+.ad-container {
+    position: relative;
+}
+.ad-image {
+    width: 100%;
+    height: auto;
+}
+.ad-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    color: white;
+    animation: scroll-text 5s linear infinite;
+}
+
+@keyframes scroll-text {
+    0% {
+        left: 100%;
+    }
+    100% {
+        left: -100%;
+    }
+}
+
+6. 輪播效果（Carousel/Slider）
+
+    說明：在同一區域顯示多張圖片，並設置自動切換或手動切換，適用於展示多個產品或服務的廣告。
+    範例：一系列圖片自動輪播，吸引用戶點擊查看其他內容。
+
+<div class="carousel">
+    <div class="carousel-item active">
+        <img src="ad1.jpg" alt="Ad 1">
+    </div>
+    <div class="carousel-item">
+        <img src="ad2.jpg" alt="Ad 2">
+    </div>
+    <div class="carousel-item">
+        <img src="ad3.jpg" alt="Ad 3">
+    </div>
+</div>
+
+.carousel {
+    position: relative;
+    overflow: hidden;
+}
+.carousel-item {
+    display: none;
+    transition: opacity 1s ease-in-out;
+}
+.carousel-item.active {
+    display: block;
+}
+
+let currentIndex = 0;
+const items = document.querySelectorAll('.carousel-item');
+setInterval(() => {
+    items[currentIndex].classList.remove('active');
+    currentIndex = (currentIndex + 1) % items.length;
+    items[currentIndex].classList.add('active');
+}, 3000);
+
+7. 背景動畫（Background Animation）
+
+    說明：圖片廣告的背景可以使用動畫效果，例如漸變、動態圖案或視頻背景，這樣可以讓廣告更具吸引力。
+    範例：使用背景圖像或視頻，並配合動態效果吸引用戶目光。
+
+.ad-container {
+    background: url('background.jpg') no-repeat center center;
+    background-size: cover;
+    animation: animate-background 10s linear infinite;
+}
+
+@keyframes animate-background {
+    0% { background-position: 0 0; }
+    100% { background-position: 100% 100%; }
+}
+
+8. 按鈕互動（Call-to-Action Button）
+
+    說明：圖片廣告中通常會包含一個醒目的“立即購買”或“了解更多”按鈕，這些按鈕可以具有動畫效果，吸引用戶點擊。
+    範例：按鈕可以在懸停時變色、放大，或有動畫效果。
+
+.cta-button {
+    background-color: #FF6347;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+.cta-button:hover {
+    transform: scale(1.1);
+}
+
+------------------------------------------------------------------------------------------------------------------
+文字效果
+
+1. 文字漸變顏色效果（Text Gradient Color）
+
+    說明：使用漸變顏色為文字添加視覺效果，讓文字顯得更有層次感。
+    範例：文字顏色會從一個顏色過渡到另一個顏色，通常用於標題或強調文字。
+
+.gradient-text {
+    background: linear-gradient(45deg, #ff6a00, #ee0979);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 3rem;
+}
+
+<h1 class="gradient-text">這是漸變顏色文字</h1>
+
+2. 文字滑入效果（Text Slide-In）
+
+    說明：文字從一邊滑入畫面，通常用於強調某些內容或吸引用戶注意。
+    範例：文字從左邊或右邊滑入，增加動態效果。
+
+.slide-in {
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: transform 1s ease, opacity 1s ease;
+}
+
+.slide-in.visible {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+<h1 class="slide-in">這是滑入的文字效果</h1>
+
+<script>
+window.onload = function() {
+    document.querySelector('.slide-in').classList.add('visible');
+};
+</script>
+
+3. 文字逐字顯示效果（Typing Effect）
+
+    說明：模仿打字的效果，逐字顯示文字，常用於引起注意或顯示重要訊息。
+    範例：文字像是逐字打出來的，適用於標語、介紹文字等。
+
+.typing-effect {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2rem;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    animation: typing 3s steps(30) 1s forwards, blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+<h1 class="typing-effect">這是逐字打字效果的文字</h1>
+
+4. 文字陰影效果（Text Shadow Effect）
+
+    說明：為文字添加陰影效果，讓文字更加立體並突顯出來，適用於標題或強調部分。
+    範例：文字顯得更加有深度，背景更加突出。
+
+.text-shadow {
+    font-size: 3rem;
+    color: #fff;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3), 0 0 25px rgba(0, 0, 0, 0.1);
+}
+
+<h1 class="text-shadow">這是有陰影的文字</h1>
+
+5. 文字淡入效果（Fade In Text）
+
+    說明：文字逐漸顯示，通常用來讓網頁內容更平滑地呈現。
+    範例：文字從透明逐漸變為完全可見，增強網站的流暢感。
+
+.fade-in-text {
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+<p class="fade-in-text">這是逐漸顯示的文字</p>
+
+6. 文字顏色變換（Color Change on Hover）
+
+    說明：當用戶將鼠標懸停在文字上時，文字的顏色會改變，通常用於超連結或按鈕。
+    範例：用戶將鼠標放在文字上時，顏色改變，提升互動感。
+
+.hover-text {
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.hover-text:hover {
+    color: #ff6347;
+}
+
+<p class="hover-text">將鼠標懸停在這裡，文字顏色會改變</p>
+
+7. 文字彈跳效果（Bounce Text）
+
+    說明：文字會有彈跳的效果，通常用於吸引用戶的注意力，或者強調某些重要內容。
+    範例：文字如同彈簧般上下跳動。
+
+.bounce-text {
+    animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+<h1 class="bounce-text">這是彈跳的文字</h1>
+
+8. 文字放大效果（Text Zoom In）
+
+    說明：文字在加載或用戶交互時會放大，通常用來強調某些重要信息或吸引用戶注意。
+    範例：文字在頁面加載或鼠標懸停時放大。
+
+.zoom-in-text {
+    font-size: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.zoom-in-text:hover {
+    transform: scale(1.2);
+}
+
+<p class="zoom-in-text">將鼠標懸停在這裡，文字會放大</p>
+
+9. 文字顯示/隱藏效果（Text Toggle Visibility）
+
+    說明：文字會在點擊或懸停時顯示或隱藏，用來創造動態效果，增加互動性。
+    範例：點擊按鈕顯示隱藏的文字。
+
+.hidden-text {
+    display: none;
+    transition: display 0.5s ease;
+}
+
+.visible-text {
+    display: block;
+}
+
+<button onclick="toggleText()">點擊顯示/隱藏文字</button>
+<p id="text" class="hidden-text">這是顯示或隱藏的文字</p>
+
+<script>
+function toggleText() {
+    document.getElementById('text').classList.toggle('visible-text');
+}
+</script>
+
+10. 文字旋轉效果（Text Rotate）
+
+    說明：文字會以某個角度旋轉，這樣的效果適合用於標題或提示性文字。
+    範例：文字旋轉一定角度，形成有趣的視覺效果。
+
+.rotate-text {
+    display: inline-block;
+    animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+<h1 class="rotate-text">這是旋轉的文字</h1>
+
+-------------------------------------------------------------------------------
